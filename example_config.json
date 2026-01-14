@@ -1,0 +1,77 @@
+{
+    "LOG": true,
+    "LOG_LEVEL": "debug",
+    "CLAUDE_PATH": "",
+    "HOST": "127.0.0.1",
+    "PORT": 3456,
+    "APIKEY": "my-secret-key-12345",
+    "API_TIMEOUT_MS": "600000",
+    "PROXY_URL": "",
+    "transformers": [
+        {
+            "name": "ollama-thinking-strip",
+            "path": "/home/ttsadasm3/.claude-code-router/plugins/ollama-thinking-strip.js"
+        }
+    ],
+    "Providers": [
+        {
+            "name": "ollama",
+            "api_base_url": "http://localhost:11434/v1/chat/completions",
+            "api_key": "ollama",
+            "models": [
+                "qwen3:8b",
+                "deepseek-r1:latest",
+                "nemotron-3-nano:latest",
+                "qwen3-coder:30b",
+                "mistral:7b"
+            ],
+            "transformer": {
+                "use": [
+                    "tooluse",
+                    "ollama-thinking-strip"
+                ]
+            }
+        },
+        {
+            "name": "openrouter",
+            "api_base_url": "https://openrouter.ai/api/v1/chat/completions",
+            "api_key": "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",
+            "models": [
+                "mistralai/devstral-2512:free",
+                "xiaomi/mimo-v2-flash:free",
+                "anthropic/claude-sonnet-4.5",
+                "nvidia/nemotron-3-nano-30b-a3b:free"
+            ],
+            "transformer": {
+                "use": [
+                    [
+                        "maxtoken",
+                        {
+                            "max_tokens": 1800
+                        }
+                    ]
+                ]
+            }
+        }
+    ],
+    "StatusLine": {
+        "enabled": false,
+        "currentStyle": "default",
+        "default": {
+            "modules": []
+        },
+        "powerline": {
+            "modules": []
+        }
+    },
+    "Router": {
+        "default": "openrouter,nvidia/nemotron-3-nano-30b-a3b:free",
+        "background": "openrouter,mistralai/devstral-2512:free",
+        "think": "openrouter,nvidia/nemotron-3-nano-30b-a3b:free",
+        "longContext": "openrouter,mistralai/devstral-2512:free",
+        "longContextThreshold": 60000,
+        "webSearch": "ollama,qwen3:8b",
+        "image": ""
+    },
+    "CUSTOM_ROUTER_PATH": ""
+}
