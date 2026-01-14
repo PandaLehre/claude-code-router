@@ -35,7 +35,7 @@
         {
             "name": "openrouter",
             "api_base_url": "https://openrouter.ai/api/v1/chat/completions",
-            "api_key": "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",
+            "api_key": "KEY",
             "models": [
                 "mistralai/devstral-2512:free",
                 "xiaomi/mimo-v2-flash:free",
