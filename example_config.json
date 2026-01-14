@@ -5,12 +5,12 @@
     "HOST": "127.0.0.1",
     "PORT": 3456,
     "APIKEY": "my-secret-key-12345",
-    "API_TIMEOUT_MS": "600000",
+    "API_TIMEOUT_MS": 600000,
     "PROXY_URL": "",
     "transformers": [
         {
             "name": "ollama-thinking-strip",
-            "path": "/home/ttsadasm3/.claude-code-router/plugins/ollama-thinking-strip.js"
+            "path": "/home/panda/.claude-code-router/plugins/ollama-thinking-strip.js"
         }
     ],
     "Providers": [
@@ -70,7 +70,7 @@
         "think": "openrouter,nvidia/nemotron-3-nano-30b-a3b:free",
         "longContext": "openrouter,mistralai/devstral-2512:free",
         "longContextThreshold": 60000,
-        "webSearch": "ollama,qwen3:8b",
+        "webSearch": "ollama,deepseek-r1:latest",
         "image": ""
     },
     "CUSTOM_ROUTER_PATH": ""
